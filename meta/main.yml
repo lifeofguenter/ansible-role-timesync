@@ -9,7 +9,6 @@ galaxy_info:
   platforms:
   - name: Ubuntu
     versions:
-    - zesty
     - yakkety
     - xenial
     - wily
