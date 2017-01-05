@@ -18,7 +18,7 @@
 
 - name: copy timesyncd default conf
   copy:
-    src: timesyncd.conf.j2
+    src: timesyncd.conf
     dest: /etc/systemd/timesyncd.conf
   notify: restart_timesyncd
   become: yes
