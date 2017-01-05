@@ -1,0 +1,28 @@
+---
+
+- name: purge legacy ntp clients
+  apt:
+    name: ntp
+    state: absent
+    purge: yes
+    force: yes
+  become: yes
+
+- name: install dependencies
+  apt:
+    name: dbus
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+
+- name: copy timesyncd default conf
+  copy:
+    src: timesyncd.conf.j2
+    dest: /etc/systemd/timesyncd.conf
+  notify: restart_timesyncd
+  become: yes
+
+- name: synchronize time
+  command: timedatectl set-ntp true
+  become: yes
