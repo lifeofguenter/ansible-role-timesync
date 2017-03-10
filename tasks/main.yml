@@ -8,21 +8,15 @@
     force: yes
   become: yes
 
-- name: install dependencies
-  apt:
-    name: dbus
-    state: present
-    update_cache: yes
-    cache_valid_time: 3600
+- name: check dmidecode
+  command: dmidecode
+  register: dmidecode_output
   become: yes
 
-- name: copy timesyncd default conf
-  copy:
-    src: timesyncd.conf
-    dest: /etc/systemd/timesyncd.conf
-  notify: restart_timesyncd
-  become: yes
+- name: enable timesync
+  include: enable.yml
+  when: dmidecode_output.stdout.find('VirtualBox') == -1
 
-- name: synchronize time
-  command: timedatectl set-ntp true
-  become: yes
+- name: disable timesync
+  include: disable.yml
+  when: dmidecode_output.stdout.find('VirtualBox') != -1

@@ -1,0 +1,5 @@
+---
+
+- name: synchronize time
+  command: timedatectl set-ntp false
+  become: yes
