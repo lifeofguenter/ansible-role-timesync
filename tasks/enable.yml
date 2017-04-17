@@ -15,6 +15,6 @@
   notify: restart_timesyncd
   become: yes
 
-- name: synchronize time
+- name: enable timesync
   command: timedatectl set-ntp true
   become: yes
