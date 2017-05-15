@@ -13,10 +13,8 @@
   register: dmidecode_output
   become: yes
 
-- name: enable timesync
-  include: enable.yml
+- include: enable.yml
   when: dmidecode_output.stdout.find('VirtualBox') == -1
 
-- name: disable timesync
-  include: disable.yml
+- include: disable.yml
   when: dmidecode_output.stdout.find('VirtualBox') != -1
