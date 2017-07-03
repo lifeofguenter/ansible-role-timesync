@@ -12,9 +12,10 @@
   command: dmidecode
   register: dmidecode_output
   become: yes
+  ignore_errors: yes
 
 - include: enable.yml
-  when: dmidecode_output.stdout.find('VirtualBox') == -1
+  when: dmidecode_output.stdout is not defined or dmidecode_output.stdout.find('VirtualBox') == -1
 
 - include: disable.yml
-  when: dmidecode_output.stdout.find('VirtualBox') != -1
+  when: dmidecode_output.stdout is defined and dmidecode_output.stdout.find('VirtualBox') != -1
