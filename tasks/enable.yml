@@ -9,9 +9,10 @@
   become: yes
 
 - name: copy timesyncd default conf
-  copy:
+  template:
     src: timesyncd.conf
     dest: /etc/systemd/timesyncd.conf
+    mode: 0644
   notify: restart_timesyncd
   become: yes
 
