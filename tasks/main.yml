@@ -6,7 +6,6 @@
     state: absent
     purge: yes
     force: yes
-  become_user: root
   become: yes
 
 - import_tasks: enable.yml
