@@ -3,15 +3,17 @@
 galaxy_info:
   author: Gunter Grodotzki
   description: Sync time via NTP
-  company: 9JKH (Pty) Ltd.
   license: MIT
-  min_ansible_version: 2.4
+  min_ansible_version: 2.9
   platforms:
     - name: Ubuntu
       versions:
+        - focal
+        - bionic
         - xenial
     - name: Debian
       versions:
+        - buster
         - stretch
         - jessie
   galaxy_tags:

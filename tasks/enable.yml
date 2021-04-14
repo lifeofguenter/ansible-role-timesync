@@ -16,6 +16,13 @@
   notify: restart_timesyncd
   become: yes
 
+- name: check status
+  command: timedatectl -p NTP show
+  become: yes
+  register: timedatectl_show
+  changed_when: no
+
 - name: enable timesync
   command: timedatectl set-ntp true
   become: yes
+  when: timedatectl_show.stdout | trim != "NTP=yes"
