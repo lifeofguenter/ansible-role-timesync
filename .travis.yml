@@ -1,22 +1,18 @@
 ---
 
-language: python
-python: "2.7"
-sudo: required
-dist: trusty
+dist: bionic
 
-# Install ansible
-addons:
-  apt:
-    packages:
-    - python-pip
+language: python
+python: "3.7"
+sudo: required
 
 install:
   # Install ansible
-  - pip install ansible
+  - pip install -U ansible
 
   # Check ansible version
   - ansible --version
+
 
 script:
   # Basic role syntax check

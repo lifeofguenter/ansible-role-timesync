@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/lifeofguenter/ansible-role-timesync.svg?branch=master)](https://travis-ci.org/lifeofguenter/ansible-role-timesync)
-
 # lifeofguenter.timesync
+
+[![Build Status](https://travis-ci.com/lifeofguenter/ansible-role-timesync.svg?branch=master)](https://travis-ci.com/lifeofguenter/ansible-role-timesync)
 
 Network Time Synchronization (NTP) via time.google.com
 

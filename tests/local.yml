@@ -1,6 +1,0 @@
----
-
-- hosts: all
-  remote_user: guenter
-  roles:
-    - whw-ansible-role-timesync
