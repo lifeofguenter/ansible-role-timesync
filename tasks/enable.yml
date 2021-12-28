@@ -21,8 +21,9 @@
   become: yes
   register: timedatectl_show
   changed_when: no
+  ignore_errors: true
 
 - name: enable timesync
   command: timedatectl set-ntp true
   become: yes
-  when: timedatectl_show.stdout | trim != "NTP=yes"
+  when: timedatectl_show is failed or timedatectl_show.stdout | trim != "NTP=yes"

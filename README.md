@@ -1,8 +1,8 @@
 # lifeofguenter.timesync
 
-[![Build Status](https://travis-ci.com/lifeofguenter/ansible-role-timesync.svg?branch=master)](https://travis-ci.com/lifeofguenter/ansible-role-timesync)
+[![Build Status](https://travis-ci.com/lifeofguenter/ansible-role-timesync.svg?branch=main)](https://travis-ci.com/lifeofguenter/ansible-role-timesync)
 
-Network Time Synchronization (NTP) via time.google.com
+Network Time Synchronization (NTP) via time.google.com on Debian-like systems
 
 ## Requirements
 
@@ -31,8 +31,8 @@ none
 
 ## License
 
-Licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
+**MIT**, see the [LICENSE file](LICENSE) for details.
 
 ## Author Information
 
-[Gunter Grodotzki](https://lifeofguenter.de)
+[Günter Grodotzki](https://www.lifeofguenter.de)
