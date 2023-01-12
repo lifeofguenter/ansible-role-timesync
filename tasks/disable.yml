@@ -1,6 +1,6 @@
 ---
 
-- name: disable timesync
-  command: timedatectl set-ntp false
+- name: Disable timesync
+  ansible.builtin.command: timedatectl set-ntp false
   changed_when: yes
   become: yes

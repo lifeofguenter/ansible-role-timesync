@@ -1,6 +1,6 @@
 ---
 
-- name: restart_timesyncd
+- name: Restart_timesyncd
   ansible.builtin.systemd:
     name: systemd-timesyncd
     state: restarted
