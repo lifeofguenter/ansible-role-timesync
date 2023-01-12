@@ -1,5 +1,7 @@
 ---
 
 - hosts: localhost
-  roles:
-    - ansible-role-timesync
+
+  tasks:
+    - ansible.builtin.import_role:
+        name: project
