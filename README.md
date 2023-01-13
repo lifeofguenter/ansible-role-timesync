@@ -1,6 +1,6 @@
 # lifeofguenter.timesync
 
-[![Build Status](https://travis-ci.com/lifeofguenter/ansible-role-timesync.svg?branch=main)](https://travis-ci.com/lifeofguenter/ansible-role-timesync)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/lifeofguenter/ansible-role-timesync/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/lifeofguenter/ansible-role-timesync/tree/main)
 
 Network Time Synchronization (NTP) via time.google.com on Debian-like systems
 
