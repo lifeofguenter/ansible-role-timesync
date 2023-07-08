@@ -2,5 +2,5 @@
 
 - name: Disable timesync
   ansible.builtin.command: timedatectl set-ntp false
-  changed_when: yes
-  become: yes
+  changed_when: true
+  become: true

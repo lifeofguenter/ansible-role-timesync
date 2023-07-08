@@ -6,26 +6,27 @@
       - dbus
       - systemd-timesyncd
     state: present
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 3600
-  become: yes
+  become: true
 
 - name: Copy timesyncd default conf
   ansible.builtin.template:
     src: timesyncd.conf
     dest: /etc/systemd/timesyncd.conf
-    mode: 0644
+    mode: '0644'
   notify: Restart_timesyncd
-  become: yes
+  become: true
 
 - name: Check status
   ansible.builtin.command: timedatectl -p NTP show
-  become: yes
+  become: true
   register: timedatectl_show
-  changed_when: no
+  changed_when: false
   ignore_errors: true
 
 - name: Enable timesync
   ansible.builtin.command: timedatectl set-ntp true
-  become: yes
+  become: true
+  changed_when: true
   when: timedatectl_show is failed or timedatectl_show.stdout | trim != "NTP=yes"
