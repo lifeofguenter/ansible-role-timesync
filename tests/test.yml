@@ -3,5 +3,6 @@
 - hosts: localhost
 
   tasks:
-    - ansible.builtin.import_role:
+    - name: Import project role
+      ansible.builtin.import_role:
         name: project

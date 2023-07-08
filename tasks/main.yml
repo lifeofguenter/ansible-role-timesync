@@ -4,9 +4,9 @@
   ansible.builtin.apt:
     name: ntp
     state: absent
-    purge: yes
-    force: yes
-  become: yes
+    purge: true
+    force: true
+  become: true
 
 - name: Import enable.yml
   ansible.builtin.import_tasks: enable.yml

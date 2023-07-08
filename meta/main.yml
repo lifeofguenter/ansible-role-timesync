@@ -8,16 +8,16 @@ galaxy_info:
   license: MIT
   min_ansible_version: '2.10'
   platforms:
-    - name: Ubuntu
-      versions:
-        - jammy
-        - focal
-        - bionic
     - name: Debian
       versions:
         - bookworm
         - bullseye
         - buster
+    - name: Ubuntu
+      versions:
+        - jammy
+        - focal
+        - bionic
   galaxy_tags:
     - system
     - ntp

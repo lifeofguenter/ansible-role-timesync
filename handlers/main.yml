@@ -4,5 +4,5 @@
   ansible.builtin.systemd:
     name: systemd-timesyncd
     state: restarted
-    enabled: yes
-  become: yes
+    enabled: true
+  become: true
