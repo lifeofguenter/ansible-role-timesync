@@ -10,11 +10,11 @@
 
 - name: Import enable.yml
   ansible.builtin.import_tasks: enable.yml
-  when: ansible_virtualization_type is not defined or ansible_virtualization_type not in timesync_blacklist
+  when: "'virtualization_type' not in ansible_facts or ansible_facts.virtualization_type not in timesync_blacklist"
 
 - name: Import disable.yml
   ansible.builtin.import_tasks: disable.yml
   when:
     - timesync_explicit_disable | default(false) | bool
-    - ansible_virtualization_type is defined
-    - ansible_virtualization_type in timesync_blacklist
+    - "'virtualization_type' in ansible_facts"
+    - ansible_facts.virtualization_type in timesync_blacklist
